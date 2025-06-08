@@ -1,0 +1,7 @@
+FROM confluentinc/cp-kafka-connect:7.6.0
+
+# Installer le connecteur Elasticsearch depuis Confluent Hub
+RUN confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:14.0.9
+
+# Définir le chemin du plugin
+ENV CONNECT_PLUGIN_PATH="/usr/share/confluent-hub-components,/usr/share/java"
